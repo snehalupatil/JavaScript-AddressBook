@@ -109,6 +109,11 @@ AddContacts('Snehal','Patil','Kavalapur','Sangli','Maharashtra','444444','91 888
 AddContacts('Rushi','Patil','Haveri','Banglore','Karnataka','666666','91 999999999','rushi@gmail.com');
 console.log(contacts.toString());
 
+/**
+ * edit by first name
+ * @param {*} firstname 
+ * @returns 
+ */
 function editContactByName(firstname){
     for(let i = 0;i < contacts.length;i++){
         if(contacts[i].firstname ==firstname){
@@ -129,6 +134,10 @@ if(contactindex!=-1){
     console.log("Name not found");
 }
 
+/**
+ * delete by first name
+ * @param {} firstname 
+ */
 function deleteContactByName(firstname){
     for(let i =0;i < contacts.length; i++){
         if(contacts[i].firstname == firstname){
@@ -139,3 +148,9 @@ function deleteContactByName(firstname){
 }
 console.log("Contact Deleted");
 deleteContactByName('Sheetal');
+
+/**
+ * number of persons in address book
+ */
+let count = contacts.reduce(count => count +=1,0);
+console.log("Number Of persons in Address Book is : " +count);
