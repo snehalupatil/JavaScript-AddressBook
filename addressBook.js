@@ -106,7 +106,7 @@ function AddContacts(firstname,lastname,address,city,state,zip,phoneNumber,email
     contacts.push(contact);
 }
 AddContacts('Snehal','Patil','Kavalapur','Sangli','Maharashtra','444444','91 8888888888','snehal@gmail.com');
-//AddContacts('Rushi','Patil','Haveri','Banglore','Karnataka','666666','91 999999999','rushi@gmail.com');
+AddContacts('Rushi','Patil','Haveri','Banglore','Karnataka','666666','91 999999999','rushi@gmail.com');
 console.log(contacts.toString());
 
 function editContactByName(firstname){
@@ -128,3 +128,14 @@ if(contactindex!=-1){
 }else{
     console.log("Name not found");
 }
+
+function deleteContactByName(firstname){
+    for(let i =0;i < contacts.length; i++){
+        if(contacts[i].firstname == firstname){
+            contacts.pop(i);
+            console.log(contacts.toString());
+        }
+    }
+}
+console.log("Contact Deleted");
+deleteContactByName('Sheetal');
