@@ -94,8 +94,17 @@ class Contact{
         }
     }
     toString(){
-        return "FirstName:"+this.firstname+",Lastname:"+this.lastname+",Address:"+this.address+",City:"
-                +this.city+",State:"+this.state+",Zip:"+this.zip+",MobileNumber:"+this.phoneNumber+",Email:"
-                +this.email;
+        return "FirstName: "+this.firstname+", Lastname: "+this.lastname+", Address: "+this.address+", City: "
+                +this.city+", State: "+this.state+", ZipCode: "+this.zip+", MobileNumber: "+this.phoneNumber+", Email: "
+                +this.email+"\n";
     }
 }
+
+let contacts=new Array();
+function AddContacts(firstname,lastname,address,city,state,zip,phoneNumber,email){
+    let contact=new Contact(firstname,lastname,address,city,state,zip,phoneNumber,email);
+    contacts.push(contact);
+}
+AddContacts('Snehal','Patil','Kavalapur','Sangli','Maharashtra','444444','91 8888888888','snehal@gmail.com');
+AddContacts('Rushi','Patil','Haveri','Banglore','Karnataka','666666','91 9999999999','rushi@gmail.com');
+console.log(contacts.toString());
