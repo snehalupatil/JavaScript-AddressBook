@@ -102,10 +102,16 @@ class Contact{
 
 let contacts=new Array();
 function AddContacts(firstname,lastname,address,city,state,zip,phoneNumber,email){
+    if(contacts.some(fname=> fname.firstname == firstname)){
+        console.log("Person is already exists");
+        return;
+    }
     let contact=new Contact(firstname,lastname,address,city,state,zip,phoneNumber,email);
     contacts.push(contact);
 }
+
 AddContacts('Snehal','Patil','Kavalapur','Sangli','Maharashtra','444444','91 8888888888','snehal@gmail.com');
+AddContacts('Rushi','Patil','Haveri','Banglore','Karnataka','666666','91 999999999','rushi@gmail.com');
 AddContacts('Rushi','Patil','Haveri','Banglore','Karnataka','666666','91 999999999','rushi@gmail.com');
 console.log(contacts.toString());
 
@@ -124,8 +130,8 @@ function editContactByName(firstname){
 }
 let contactindex=editContactByName('Snehal');
 if(contactindex!=-1){
-    console.log("Before Update: ");
-    console.log(contacts.toString());
+    //console.log("Before Update: ");
+    //console.log(contacts.toString());
     contacts[contactindex].firstname='Sheetal';
     contacts[contactindex].city='Kolhapur';
     console.log("After Update: ");
