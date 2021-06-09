@@ -179,3 +179,10 @@ SearchCityOrState('Kolhapur');
 //searching with state
 console.log("**Search by State:");
 SearchCityOrState('Maharashtra');
+
+//View By city
+console.log("View By City:");
+SearchCityOrState('Kolhapur');
+//View By state
+console.log("View By State:");
+SearchCityOrState('Maharashtra');
