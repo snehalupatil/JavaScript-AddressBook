@@ -212,3 +212,23 @@ function sortByPersonName() {
 }
 
 sortByPersonName();
+
+/**
+ *Sort by contact by person city
+ */
+ function sortByPersonCityStateZip() {
+    let sortedArray = contacts;
+    sortedArray.sort((a, b) => a.city.toLowerCase().localeCompare(b.city.toLowerCase()));
+    console.log("\n\Printing sorted array by Person City: ");
+    sortedArray.forEach(person => console.log(person.toString()));
+
+    sortedArray.sort((a, b) => a.state.toLowerCase().localeCompare(b.state.toLowerCase()));
+    console.log("\n\Printing sorted array by Person State: ");
+    sortedArray.forEach(person => console.log(person.toString()));
+
+    sortedArray.sort((a, b) => a.zip.toLowerCase().localeCompare(b.zip.toLowerCase()));
+    console.log("\n\Printing sorted array by Person ZipCode: ");
+    sortedArray.forEach(person => console.log(person.toString()));
+}
+
+sortByPersonCityStateZip();
