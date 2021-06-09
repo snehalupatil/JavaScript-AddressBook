@@ -186,3 +186,17 @@ SearchCityOrState('Kolhapur');
 //View By state
 console.log("View By State:");
 SearchCityOrState('Maharashtra');
+
+/**
+ * count person by city or state
+ * @param {*} city 
+ * @returns 
+ */
+function getCountByCity(city) {
+    return contacts.filter(x => x.city == city).reduce((countOfContact, x) => countOfContact += 1, 0);
+}
+function getCountByState(state) {
+    return contacts.filter(x => x.state == state).reduce((countOfContact, x) => countOfContact += 1, 0);
+}
+console.log("Count By City: " + getCountByCity("Kolhapur"));
+console.log("Count By State: " + getCountByState("Maharashtra"));
