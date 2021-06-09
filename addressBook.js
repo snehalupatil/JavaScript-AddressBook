@@ -94,8 +94,8 @@ class Contact{
         }
     }
     toString(){
-        return "FirstName: "+this.firstname+", Lastname: "+this.lastname+", Address: "+this.address+", City: "
-                +this.city+", State: "+this.state+", ZipCode: "+this.zip+", MobileNumber: "+this.phoneNumber+", Email: "
+        return "FirstName: "+this.firstname+",\nLastname: "+this.lastname+",\nAddress: "+this.address+",\nCity: "
+                +this.city+",\nState: "+this.state+",\nZipCode: "+this.zip+",\nMobileNumber: "+this.phoneNumber+",\nEmail: "
                 +this.email+"\n";
     }
 }
@@ -106,5 +106,25 @@ function AddContacts(firstname,lastname,address,city,state,zip,phoneNumber,email
     contacts.push(contact);
 }
 AddContacts('Snehal','Patil','Kavalapur','Sangli','Maharashtra','444444','91 8888888888','snehal@gmail.com');
-AddContacts('Rushi','Patil','Haveri','Banglore','Karnataka','666666','91 9999999999','rushi@gmail.com');
+//AddContacts('Rushi','Patil','Haveri','Banglore','Karnataka','666666','91 999999999','rushi@gmail.com');
 console.log(contacts.toString());
+
+function editContactByName(firstname){
+    for(let i = 0;i < contacts.length;i++){
+        if(contacts[i].firstname ==firstname){
+            return i;
+        }
+    }
+    return -1;
+}
+let contactindex=editContactByName('Snehal');
+if(contactindex!=-1){
+    console.log("Before Update: ");
+    console.log(contacts.toString());
+    contacts[contactindex].firstname='Sheetal';
+    contacts[contactindex].city='Kolhapur';
+    console.log("After Update: ");
+    console.log(contacts.toString());
+}else{
+    console.log("Name not found");
+}
