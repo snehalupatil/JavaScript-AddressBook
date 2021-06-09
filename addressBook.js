@@ -100,6 +100,9 @@ class Contact{
     }
 }
 
+/**
+ * check duplicate items
+ */
 let contacts=new Array();
 function AddContacts(firstname,lastname,address,city,state,zip,phoneNumber,email){
     if(contacts.some(fname=> fname.firstname == firstname)){
@@ -153,10 +156,26 @@ function deleteContactByName(firstname){
     }
 }
 console.log("Contact Deleted");
-deleteContactByName('Sheetal');
+deleteContactByName('Char');
 
 /**
  * number of persons in address book
  */
 let count = contacts.reduce(count => count +=1,0);
 console.log("Number Of persons in Address Book is : " +count);
+
+/**
+ * search by city or state
+ * @param {*} cityOrState 
+ */
+function SearchCityOrState(cityOrState){
+    if(contacts.filter((p=>p.city==cityOrState)||(p=>p.state==cityOrState))){
+        console.log(contacts.toString());
+    }
+}
+//searching with city
+console.log("**Search by City:");
+SearchCityOrState('Kolhapur');
+//searching with state
+console.log("**Search by State:");
+SearchCityOrState('Maharashtra');
